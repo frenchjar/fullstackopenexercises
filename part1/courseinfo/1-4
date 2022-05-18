@@ -1,0 +1,65 @@
+const App = () => {
+  const course = "Half Stack Application Development"
+
+  const parts = [
+    {
+      name: "Fundamentals of React",
+      exercises: 10
+    },
+    {
+      name: "Using Props to Pass Data",
+      exercises: 7
+    },
+    {
+      name: "State of a Component",
+      exercises: 14
+    }
+  ]
+
+  const sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+
+
+  const Header = (props) => {
+    return (
+      <h1>{props.course}</h1>
+    )
+  }
+
+  const Parts = (props) => {
+    return (
+      <div>
+        <p>{props.name}: {props.exercises}
+        </p>
+      </div>
+    )
+  }
+
+  const Content = (props) => {
+  return (
+    <div>
+      <Parts name={parts[0].name} exercises={parts[0].exercises} />
+      <Parts name={parts[1].name} exercises={parts[1].exercises} />
+      <Parts name={parts[2].name} exercises={parts[2].exercises} />
+      </div>
+  )
+  }
+
+  const Total = (props) => {
+    return (
+      <div>
+        <p>
+          Total number of exercises in this course: {props.sum}
+        </p>
+      </div>
+    )
+}
+  return (
+    <div>
+      <Header course={course} />
+      <Content />
+      <Total sum={sum} />
+   </div>
+  )
+}
+
+export default App
