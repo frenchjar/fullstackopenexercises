@@ -1,73 +1,71 @@
 const course = "Half Stack Application Development"
-  const part1 = "Fundamentals of React"
-  const legend = "Section Title : " + "    # of Exercises"
-  const exercises1 = 10
-  const part2 = "Using Props to Pass Data"
-  const exercises2 = 7
-  const part3 = "State of a Component"
-  const exercises3 = 14
-  const groupOne = part1 + ": "  + exercises1
-  const groupTwo = part2 + ": "  + exercises2
-  const groupThree = part3 + ": "  + exercises3
-  const sum = exercises1 + exercises2 + exercises3
+const part1 = "Fundamentals of React"
+const legend = "Section Title : " + "    # of Exercises"
+const exercises1 = 10
+const part2 = "Using Props to Pass Data"
+const exercises2 = 7
+const part3 = "State of a Component"
+const exercises3 = 14
+const groupOne = part1 + ": "  + exercises1
+const groupTwo = part2 + ": "  + exercises2
+const groupThree = part3 + ": "  + exercises3
+const sum = exercises1 + exercises2 + exercises3
 
 
 
-  const Header = (props) => {
-    return (
-      <div>
-     <h1>{props.course}</h1>
-     </div>
-    )
-   }
-
-   const Legend = (props) => {
-     return (
-       <div>
-         <h3>{props.legend}</h3>
-       </div>
-     )
-   }
-
-   const Content = (props) => {
-    return (
-      <div>
-       <p>
-        {props.group1}
-       </p>
-       <p>
-        {props.group2}
-       </p>
-       <p>
-        {props.group3}
-       </p>
-      </div>
-    )
-  }
-
-
-  const Total = (props) => {
-   return (
-     <div>
-       <p>
-         Total number of exercises: {props.sum}
-       </p>
-     </div>
-   )
-  }
-
-  const App = () => {
+const Header = (props) => {
   return (
     <div>
-      <Header course={course} />
-      <Legend legend={legend} />
-      <Content
-        group1={groupOne}
-        group2={groupTwo}
-        group3={groupThree}  
-      />
-      <Total sum={sum} />
+     <h1>{props.course}</h1>
     </div>
+  )
+}
+
+const Legend = (props) => {
+  return (
+    <div>
+      <h3>{props.legend}</h3>
+    </div>
+  )
+}
+
+const Part = (props) => {
+  return (
+    <div>
+      <p>{props.group}</p>
+    </div>
+   )
+}
+
+const Content = (props) => {
+return (
+  <div>
+    <Part group={groupOne} />
+    <Part group={groupTwo} />
+    <Part group={groupThree} />
+  </div>
+  )
+}
+
+
+const Total = (props) => {
+  return (
+    <div>
+      <p>
+        Total number of exercises: {props.sum}
+      </p>
+    </div>
+  )
+}
+
+const App = () => {
+return (
+  <div>
+    <Header course={course} />
+    <Legend legend={legend} />
+    <Content />
+    <Total sum={sum} />
+  </div>
   )
 }
 
