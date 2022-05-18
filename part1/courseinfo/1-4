@@ -16,9 +16,6 @@ const App = () => {
     }
   ]
 
-  const sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
-
-
   const Header = (props) => {
     return (
       <h1>{props.course}</h1>
